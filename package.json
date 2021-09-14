@@ -24,5 +24,9 @@
       "next/core-web-vitals",
       "next/babel"
     ]
+  },
+  "babelrc":{
+    "presets": ["next/babel"],
+    "plugins": [["styled-components", { "ssr": true }]]
   }
 }
