@@ -3,6 +3,8 @@ import Head from "next/head";
 
 import Navbar from "../components/organisms/Navbar/Navbar";
 import Homepage from "../components/pages/Homepage/Homepage";
+import axios from "axios";
+import { requests } from "../requests";
 
 export default function Home(props) {
   const { popularMovies, popularSeries } = props;
@@ -28,11 +30,11 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const movieRequest = await fetch("http://localhost:3000/api/movies/popular");
-  const popularMovies = await movieRequest.json();
+  const movieRequest = await axios.get(requests.fetchMostPopularMovies);
+  const popularMovies = movieRequest.data.results;
 
-  const seriesRequest = await fetch("http://localhost:3000/api/series/popular");
-  const popularSeries = await seriesRequest.json();
+  const seriesRequest = await axios.get(requests.fetchMostPopularTV);
+  const popularSeries = seriesRequest.data.results;
 
   return {
     props: {
