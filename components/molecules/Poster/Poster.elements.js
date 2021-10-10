@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { skeletonAnimation } from "../../../globalStyles";
+
 export const StyledPoster = styled.div`
   width: 100%;
   border-radius: 4px;
@@ -48,16 +50,26 @@ export const PosterImage = styled.figure`
 
 export const PosterInfo = styled.div`
   flex: 1;
-  padding: 1em;
+  padding: 2em 1em;
   display: flex;
   flex-direction: column;
   gap: 1em;
   align-items: center;
   justify-content: space-evenly;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 // export const PosterImage = styled(Image)``;
 
 export const PosterTitle = styled.h4`
   text-align: center;
   font-size: 1.17rem;
+`;
+
+export const ImageBone = styled.div`
+  width: 100%;
+  aspect-ratio: ${({ width, height }) => `${width} / ${height}`};
+  animation: ${skeletonAnimation} 1s ease-in-out infinite both alternate;
 `;

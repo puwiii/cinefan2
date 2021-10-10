@@ -10,27 +10,27 @@ export const requests = {
 
   //trendys
   fetchMostPopular: `/trending/all/week?api_key=${API_KEY}`,
-  fetchLatestMovies: `discover/movie?api_key=${API_KEY}&sort_by=release_date.desc&language=es`,
-  fetchLatestSeries: `discover/tv?api_key=${API_KEY}&sort_by=release_date.desc&language=es`,
-  fetchMostPopularMovies: `discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&language=es`,
-  fetchMostPopularTV: `discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&language=es`,
+  fetchLatestMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=release_date.desc&language=es`,
+  fetchLatestSeries: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=release_date.desc&language=es`,
+  fetchMostPopularMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&language=es`,
+  fetchMostPopularTV: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&language=es`,
 
   //genres
   fetchGenresMovies: `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=es`,
   fetchGenresSeries: `https://api.themoviedb.org/3/genre/tv/list?api_key=${API_KEY}&language=es`,
 
   //movies component
-  fetchMoviesTopRatedPage: `movie/top_rated?api_key=${API_KEY}&language=es&page=`,
-  fetchMoviesUpcomingPage: `movie/upcoming?api_key=${API_KEY}&language=es&page=`,
-  fetchMoviesNowPlayingPage: `movie/now_playing?api_key=${API_KEY}&language=es&page=`,
-  fetchMoviesPopularPage: `movie/popular?api_key=${API_KEY}&language=es&page=`,
-  fetchMoviesLatest: `movie/latest?api_key=${API_KEY}&language=es`,
+  fetchMoviesTopRatedPage: `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=es&page=`,
+  fetchMoviesUpcomingPage: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=es&page=`,
+  fetchMoviesNowPlayingPage: `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=es&page=`,
+  fetchMoviesPopularPage: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es&page=`,
+  fetchMoviesLatest: `https://api.themoviedb.org/3/movie/latest?api_key=${API_KEY}&language=es`,
 
   //series component
-  fetchSeriesTopRatedPage: `tv/top_rated?api_key=${API_KEY}&language=es&page=`,
-  fetchSeriesPopularPage: `tv/popular?api_key=${API_KEY}&language=es&page=`,
-  fetchSeriesOnTheAir: `tv/on_the_air?api_key=${API_KEY}&language=es&page=`,
-  fetchSeriesAiringToday: `tv/airing_today?api_key=${API_KEY}&language=es&page=`,
+  fetchSeriesTopRatedPage: `https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=es&page=`,
+  fetchSeriesPopularPage: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=es&page=`,
+  fetchSeriesOnTheAir: `https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_KEY}&language=es&page=`,
+  fetchSeriesAiringToday: `https://api.themoviedb.org/3/tv/airing_today?api_key=${API_KEY}&language=es&page=`,
 
   //details
   fetchMovieDetails: `movie/793723?api_key=${API_KEY}&language=es`,

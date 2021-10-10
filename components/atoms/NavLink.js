@@ -42,7 +42,7 @@ const StyledLink = styled.a`
   }
 `;
 
-export const NavLink = ({ href, label, passHref = true, icon }) => {
+export const NavLink = ({ href, label, passHref = true, icon = "" }) => {
   return (
     <Link href={href} passHref={passHref}>
       <StyledLink>

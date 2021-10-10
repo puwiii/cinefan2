@@ -5,7 +5,7 @@ import Navbar from "../components/organisms/Navbar/Navbar";
 import Homepage from "../components/pages/Homepage/Homepage";
 
 export default function Home(props) {
-  const { popularMovies } = props;
+  const { popularMovies, popularSeries } = props;
 
   return (
     <>
@@ -21,25 +21,23 @@ export default function Home(props) {
 
         {/* home page */}
         <Navbar />
-        <Homepage popularMovies={popularMovies} />
+        <Homepage popularMovies={popularMovies} popularSeries={popularSeries} />
       </div>
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const request = await fetch("http://localhost:3000/api/movies/popular");
-  const popularMovies = await request.json();
+  const movieRequest = await fetch("http://localhost:3000/api/movies/popular");
+  const popularMovies = await movieRequest.json();
 
-  if (!request) {
-    return {
-      notFound: true,
-    };
-  }
+  const seriesRequest = await fetch("http://localhost:3000/api/series/popular");
+  const popularSeries = await seriesRequest.json();
 
   return {
     props: {
       popularMovies: popularMovies,
+      popularSeries: popularSeries,
     },
   };
 }

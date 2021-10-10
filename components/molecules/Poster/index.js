@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Sign } from "../../atoms/Sign";
+import { GoVerified } from "react-icons/go";
 import { Pharagraph } from "../../atoms/Pharagraph";
 
 import { Rating } from "../../atoms/Rating";
@@ -10,15 +12,20 @@ import {
   PosterImage,
   PosterInfo,
   PosterTitle,
+  ImageBone,
 } from "./Poster.elements";
 
-const index = ({ mediaItem, mediaType = "movie" }) => {
-  const isWide = mediaItem.vote_average > 7.8 ? true : false;
+const index = ({ mediaItem, mediaType = "movie", loader }) => {
+  const isWide = mediaItem?.vote_average > 7.8 ? true : false;
 
   return (
     <StyledPoster wide={isWide}>
       {isWide ? (
         <>
+          <Sign colorIcon="#22ff22">
+            <GoVerified />
+            buena critica
+          </Sign>
           <PosterImage>
             <Image
               layout="fill"
@@ -31,7 +38,9 @@ const index = ({ mediaItem, mediaType = "movie" }) => {
             />
           </PosterImage>
           <PosterInfo>
-            <PosterTitle>{mediaItem.title}</PosterTitle>
+            <PosterTitle>
+              {mediaItem.title ? mediaItem.title : mediaItem.name}
+            </PosterTitle>
             <Pharagraph textAling="left" crop={5}>
               {mediaItem.overview}
             </Pharagraph>
@@ -47,14 +56,20 @@ const index = ({ mediaItem, mediaType = "movie" }) => {
           </PosterInfo>
         </>
       ) : (
-        <Image
-          layout="responsive"
-          width="500px"
-          height="750px"
-          src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
-          placeholder="blur"
-          blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
-        />
+        <>
+          {loader ? (
+            <ImageBone width="500" height="750" />
+          ) : (
+            <Image
+              layout="responsive"
+              width="500px"
+              height="750px"
+              src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
+              placeholder="blur"
+              blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
+            />
+          )}
+        </>
       )}
     </StyledPoster>
   );

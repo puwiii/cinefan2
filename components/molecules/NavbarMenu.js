@@ -2,23 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "../atoms/NavLink";
 
-// import { HiMenuAlt3 } from "react-icons/hi";
-// import { GrFormClose } from "react-icons/gr";
-
-// const NavMenuButton = styled.div`
-//   display: none;
-//   flex-direction: row;
-//   align-items: center;
-//   font-size: 40px;
-
-//   cursor: pointer;
-
-//   @media screen and (max-width: 445px) {
-//     display: flex;
-//   }
-// `;
-
-const StyledNavMenu = styled.div`
+const StyledNavMenu = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,8 +24,6 @@ const StyledNavMenu = styled.div`
 `;
 
 export const NavbarMenu = ({ links = [] }) => {
-  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <StyledNavMenu lenght={links.length}>
       {links.map((link, index) => {

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 import Link from "next/link";
 const GlobalStyles = createGlobalStyle`
 
@@ -16,8 +16,8 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 400; 
   min-height: 100vh;
-  color: ${({ theme }) => theme.color_text_400};
   background: ${({ theme }) => theme.color_background_400};
+  color: ${({ theme }) => theme.color_text_400};
   line-height: 1.3;
   font-size: .9rem;
   overflow: overlay;
@@ -78,6 +78,9 @@ label,
 select,
 button,
 textarea {
+  color: ${({ theme }) => theme.color_text_400};
+  line-height: 1.3;
+  font-size: .9rem;
   font-family:
   //"Source Sans Pro", //3
   //"Lora", //1.3
@@ -98,6 +101,17 @@ button:disabled {
   filter: grayscale(100);
   //border: 2px dashed #ccc;
 }
+`;
+
+//use backgroound: linear-gradient(90deg, ${theme.color_background_300} 0px, rgba(255,255,255,.2) 40px, ${theme.color_background_300} 80px)
+export const skeletonAnimation = keyframes`
+ from{
+   opacity:.02;
+    background: #fff;
+  }
+  to{
+    opacity:.05;
+   background: #fff;
 `;
 
 export const Container = styled.div`

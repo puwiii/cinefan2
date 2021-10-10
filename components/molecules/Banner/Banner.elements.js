@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+import { skeletonAnimation } from "../../../globalStyles";
 
 export const StyledBanner = styled.article`
   border-radius: 0.41em;
@@ -28,23 +30,18 @@ export const StyledBanner = styled.article`
   @media screen and (max-width: 425px) {
     flex-direction: column;
   }
-  /* &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1; 
-    width: 45%; 
-    height: 100%;
-    background-image: url("${({ background }) => background}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  } */
+
+  ${({ loading, theme }) =>
+    loading &&
+    css`
+      min-height: 375px;
+      animation: ${skeletonAnimation} 1s ease-in-out infinite both alternate;
+    `}
 `;
 
 export const BannerImage = styled.div`
   position: relative;
+  z-index: 10;
   flex: 2;
   background-image: url("${({ background }) => background}");
   background-repeat: no-repeat;
@@ -73,6 +70,7 @@ export const BannerImage = styled.div`
 export const BannerInfo = styled.div`
   flex: 1;
   display: flex;
+  z-index: 10;
   gap: 1.7em;
   flex-direction: column;
   padding: 2.2em;

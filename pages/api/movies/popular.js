@@ -4,9 +4,7 @@ import axios from "axios";
 
 export default async function handler(req, res) {
   try {
-    const data = await axios.get(requests.fetchMostPopularMovies, {
-      baseURL: "https://api.themoviedb.org/3/",
-    });
+    const data = await axios.get(requests.fetchMostPopularMovies);
 
     // let movies = [];
 
