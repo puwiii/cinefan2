@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.22.0",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -25,8 +26,17 @@
       "next/babel"
     ]
   },
-  "babelrc":{
-    "presets": ["next/babel"],
-    "plugins": [["styled-components", { "ssr": true }]]
+  "babelrc": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true
+        }
+      ]
+    ]
   }
 }

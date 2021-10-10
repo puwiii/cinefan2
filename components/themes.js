@@ -13,13 +13,22 @@ export const lightTheme = {
   color_pink_600: "#75213c",
   color_pink_700: "#4e1628",
 
-  color_primary_300: "#3A7481",
+  color_primary_300: "#A5CBD6",
   color_primary_400: "#599EB2",
+  color_primary_500: "#3A7481",
 
-  color_background_300: "#E4EBF1",
-  color_background_400: "#eef2f6",
+  color_secondary_400: "#fafafa",
 
-  color_text_400: "#2f3139",
+  // color_background_300: "#E4EBF1",
+  // color_background_400: "#eef2f6",
+
+  // color_text_400: "#2f3139",
+
+  color_text_400: "#CAD7E3",
+  color_text_400: "#CAD7E3",
+
+  color_background_300: "#212431",
+  color_background_400: "#181a23",
 
   color_info: "#ffc107",
   color_error: "#c43d3d",
