@@ -22,9 +22,11 @@
   },
   "eslintConfig": {
     "extends": [
-      "next/core-web-vitals",
-      "next/babel"
-    ]
+      "next/core-web-vitals"
+    ],
+    "rules": {
+      "@next/next/no-document-import-in-page": "off"
+    }
   },
   "babelrc": {
     "presets": [
