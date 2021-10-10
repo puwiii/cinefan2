@@ -16,7 +16,7 @@ import {
 } from "./Poster.elements";
 
 const index = ({ mediaItem, mediaType = "movie", loader }) => {
-  const isWide = mediaItem?.vote_average > 7.8 ? true : false;
+  const isWide = mediaItem?.vote_average > 8 ? true : false;
 
   return (
     <StyledPoster wide={isWide}>
@@ -24,7 +24,7 @@ const index = ({ mediaItem, mediaType = "movie", loader }) => {
         <>
           <Sign colorIcon="#22ff22">
             <GoVerified />
-            buena critica
+            muy buena critica
           </Sign>
           <PosterImage>
             <Image
@@ -35,6 +35,7 @@ const index = ({ mediaItem, mediaType = "movie", loader }) => {
               src={`https://image.tmdb.org/t/p/w780${mediaItem.poster_path}`}
               placeholder="blur"
               blurDataURL={`https://image.tmdb.org/t/p/w300${mediaItem.poster_path}`}
+              alt={mediaItem.title ? mediaItem.title : mediaItem.name}
             />
           </PosterImage>
           <PosterInfo>
@@ -67,6 +68,7 @@ const index = ({ mediaItem, mediaType = "movie", loader }) => {
               src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
               placeholder="blur"
               blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
+              alt={mediaItem.title ? mediaItem.title : mediaItem.name}
             />
           )}
         </>
