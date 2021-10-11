@@ -14,7 +14,7 @@ import { NavbarMenu } from "../../molecules/NavbarMenu";
 import { FiLogIn } from "react-icons/fi";
 
 import { links } from "./data";
-import Logo from "../../atoms/Logo";
+import { Logo } from "../../atoms/Logo";
 
 const Navbar = () => {
   return (
@@ -23,7 +23,7 @@ const Navbar = () => {
         <Link href="/" passHref>
           <HeaderLogo>
             {/* <Logo height={39} /> */}
-            <LogoTitle>cinefan</LogoTitle>
+            <Logo />
           </HeaderLogo>
         </Link>
 
