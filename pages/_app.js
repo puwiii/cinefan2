@@ -17,9 +17,7 @@ function MyApp({ Component, pageProps }) {
       setLoading(true);
     };
     const end = () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, [300]);
+      setLoading(false);
     };
     Router.events.on("routeChangeStart", start);
     Router.events.on("routeChangeComplete", end);
@@ -33,7 +31,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <StateProvider initialState={initialState} reducer={reducer}>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={darkTheme}>
         <GlobalStyles />
         <Navbar />
         {loading ? <LoadingPage /> : <Component {...pageProps} />}
