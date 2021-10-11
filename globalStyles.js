@@ -114,6 +114,16 @@ export const skeletonAnimation = keyframes`
    background: #fff;
 `;
 
+export const fadeInAnimation = keyframes`
+    from{
+      opacity:0;
+    }
+
+    to{
+      opacity:1;
+    }
+`;
+
 export const Container = styled.div`
   z-index: 1;
   width: 100%;
