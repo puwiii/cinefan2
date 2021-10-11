@@ -29,6 +29,7 @@ const index = ({ mediaItem, mediaType = "movie", loader }) => {
               objectFit="cover"
               width="500px"
               height="750px"
+              quality={50}
               src={`https://image.tmdb.org/t/p/w780${mediaItem.poster_path}`}
               placeholder="blur"
               blurDataURL={`https://image.tmdb.org/t/p/w300${mediaItem.poster_path}`}
@@ -67,6 +68,7 @@ const index = ({ mediaItem, mediaType = "movie", loader }) => {
                 layout="responsive"
                 width="500px"
                 height="750px"
+                quality={50}
                 src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
                 placeholder="blur"
                 blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
