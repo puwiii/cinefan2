@@ -1,13 +1,20 @@
 import { useEffect, useRef } from "react";
 import Lottie from "lottie-web";
-import { Logo } from "../../atoms/Logo";
-import { Pharagraph } from "../../atoms/Pharagraph";
+import SyncLoader from "react-spinners/SyncLoader";
+
+import { darkTheme } from "../../themes";
 
 import {
   LoadingPage,
   LoadingComponent,
   AnimationBox,
 } from "./Loading.elements";
+
+// const override = css`
+//   display: block;
+//   margin: 0 auto;
+//   border-color: red;
+// `;
 
 const Index = () => {
   const animationBox = useRef();
@@ -22,15 +29,18 @@ const Index = () => {
       animationData: require(`../../animations/loadingAnimation.json`),
     });
 
-    animation.setSpeed(1.5);
+    animation.setSpeed(2);
   }, []);
 
   return (
     <LoadingPage>
       <LoadingComponent>
         <AnimationBox ref={animationBox} />
-        <Logo variant="small" />
-        <Pharagraph>cargando información...</Pharagraph>
+        <SyncLoader
+          color={darkTheme.color_primary_400}
+          loading={true}
+          size={10}
+        />
       </LoadingComponent>
     </LoadingPage>
   );

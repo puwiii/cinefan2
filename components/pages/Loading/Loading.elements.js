@@ -13,14 +13,18 @@ export const LoadingComponent = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 0px;
 
   ${css`
-    animation: ${fadeInAnimation} 50ms ease-in-out;
+    animation: ${fadeInAnimation} 150ms ease-in-out;
   `}
 `;
 
 export const AnimationBox = styled.figure`
   width: 200px;
   height: 200px;
+`;
+
+export const LoadingText = styled.h2`
+  font-size: 1.17rem;
 `;
