@@ -3,6 +3,10 @@ import { Container } from "../../../globalStyles";
 
 export const Header = styled.header`
   padding: 10px 0;
+  background: ${({ theme }) => theme.color_background_300};
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 `;
 
 export const HeaderContainer = styled(Container)`
@@ -27,11 +31,14 @@ export const HeaderLogo = styled.a`
 `;
 
 export const LogoTitle = styled.h1`
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   color: ${({ theme }) => theme.color_text_400};
   font-family: "Poppins";
-  font-weight: 700;
-
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: -webkit-linear-gradient(45deg, #ff9966, #ff5e62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   /* @media screen and (max-width: 425px) {
     font-size: 1.5rem;
   } */

@@ -4,18 +4,26 @@ export const Tag = styled.span`
   position: relative;
   z-index: 1;
   padding: 0.54em 0.87em;
-  border-radius: 3px;
-  /* background: ${({ theme }) =>
-    `linear-gradient(to right bottom, ${theme.color_primary_300} 50%, ${theme.color_secondary_400})`}; */
+  padding-left: 2em;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
 
-  font-weight: 500;
+  font-weight: ${({ variant }) => {
+    switch (variant) {
+      case "small":
+        return "300";
+      default:
+        return "400";
+    }
+  }};
 
   font-size: ${({ variant }) => {
     switch (variant) {
       case "small":
-        return ".7rem";
+        return ".65rem";
       default:
-        return ".9rem";
+        return ".87rem";
     }
   }};
 
@@ -23,12 +31,10 @@ export const Tag = styled.span`
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    background: ${({ theme }) =>
-      `linear-gradient(to right bottom, ${theme.color_primary_300} 50%, ${theme.color_secondary_400})`};
-    width: 100%;
+    left: 1em;
+    width: 10px;
     height: 100%;
-    z-index: -1;
-    opacity: 0.1;
+    z-index: 10;
+    border-left: 3px dotted ${({ theme }) => theme.color_background_300};
   }
 `;

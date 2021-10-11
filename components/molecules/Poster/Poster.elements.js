@@ -31,7 +31,7 @@ export const StyledPoster = styled.div`
 
 export const PosterImage = styled.figure`
   position: relative;
-  flex: 1;
+  width: 46.7%;
   height: 100%;
   opacity: 9;
 
@@ -44,7 +44,7 @@ export const PosterImage = styled.figure`
     width: 100%;
     height: 100%;
     background: ${({ theme }) =>
-      `linear-gradient(to left, ${theme.color_background_300}, transparent 50%);`};
+      `linear-gradient(to left, ${theme.color_background_300} 0, transparent 30%);`};
   }
 `;
 
@@ -54,7 +54,7 @@ export const PosterInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
 
   @media screen and (max-width: 768px) {

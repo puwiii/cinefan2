@@ -22,7 +22,7 @@ const Navbar = () => {
       <HeaderContainer>
         <Link href="/" passHref>
           <HeaderLogo>
-            <Logo height={29} />
+            {/* <Logo height={39} /> */}
             <LogoTitle>cinefan</LogoTitle>
           </HeaderLogo>
         </Link>

@@ -33,73 +33,73 @@ export const requests = {
   fetchSeriesAiringToday: `https://api.themoviedb.org/3/tv/airing_today?api_key=${API_KEY}&language=es&page=`,
 
   //details
-  fetchMovieDetails: `movie/793723?api_key=${API_KEY}&language=es`,
+  fetchMovieDetails: `https://api.themoviedb.org/3/movie/793723?api_key=${API_KEY}&language=es`,
 };
 
 export function getAccountDetails(session) {
-  return `account?api_key=${API_KEY}&session_id=${session}`;
+  return `https://api.themoviedb.org/3/account?api_key=${API_KEY}&session_id=${session}`;
 }
 
 export function getDetails(id, mediaType) {
   if (mediaType === "movie") {
-    return `movie/${id}?api_key=${API_KEY}&language=es`;
+    return `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=es`;
   } else if (mediaType === "tv") {
-    return `tv/${id}?api_key=${API_KEY}&language=es`;
+    return `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=es`;
   }
 }
 
 export function getVideos(id, mediaType) {
   if (mediaType === "movie") {
-    return `movie/${id}/videos?api_key=${API_KEY}&language=es`;
+    return `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=es`;
   } else if (mediaType === "tv") {
-    return `tv/${id}/videos?api_key=${API_KEY}&language=es`;
+    return `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${API_KEY}&language=es`;
   }
 }
 
 export function getSimilar(id, mediaType) {
   if (mediaType === "movie") {
-    return `movie/${id}/similar?api_key=${API_KEY}&language=es&page=1`;
+    return `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=es&page=1`;
   } else if (mediaType === "tv") {
-    return `tv/${id}/similar?api_key=${API_KEY}&language=es&page=1`;
+    return `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${API_KEY}&language=es&page=1`;
   }
 }
 
 export function getRecommended(id, mediaType) {
   if (mediaType === "movie") {
-    return `movie/${id}/recommendations?api_key=${API_KEY}&language=es-SP&page=1`;
+    return `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${API_KEY}&language=es-SP&page=1`;
   } else if (mediaType === "tv") {
-    return `tv/${id}/recommendations?api_key=${API_KEY}&language=es-SP&page=1`;
+    return `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${API_KEY}&language=es-SP&page=1`;
   }
 }
 
 export function getReviews(id, mediaType) {
   if (mediaType === "movie") {
-    return `movie/${id}/reviews?api_key=${API_KEY}&language=es-SP&page=1`;
+    return `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=es-SP&page=1`;
   } else if (mediaType === "tv") {
-    return `tv/${id}/reviews?api_key=${API_KEY}&language=es-SP&page=1`;
+    return `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${API_KEY}&language=es-SP&page=1`;
   }
 }
 
 export function sendRatings(id, mediaType, userType) {
   if (userType.username === "Guest") {
     if (mediaType === "movie") {
-      return `movie/${id}/rating?api_key=${API_KEY}&guest_session_id=${userType.sessionId.session_id}`;
+      return `https://api.themoviedb.org/3/movie/${id}/rating?api_key=${API_KEY}&guest_session_id=${userType.sessionId.session_id}`;
     } else if (mediaType === "tv") {
-      return `tv/${id}/rating?api_key=${API_KEY}&guest_session_id=${userType.sessionId.session_id}`;
+      return `https://api.themoviedb.org/3/tv/${id}/rating?api_key=${API_KEY}&guest_session_id=${userType.sessionId.session_id}`;
     }
   } else {
     if (mediaType === "movie") {
-      return `movie/${id}/rating?api_key=${API_KEY}&session_id=${userType.sessionId.session_id}`;
+      return `https://api.themoviedb.org/3/movie/${id}/rating?api_key=${API_KEY}&session_id=${userType.sessionId.session_id}`;
     } else if (mediaType === "tv") {
-      return `tv/${id}/rating?api_key=${API_KEY}&session_id=${userType.sessionId.session_id}`;
+      return `https://api.themoviedb.org/3/tv/${id}/rating?api_key=${API_KEY}&session_id=${userType.sessionId.session_id}`;
     }
   }
 }
 
 export function getImages(id, mediaType) {
   if (mediaType === "movie") {
-    return `movie/${id}/images?api_key=${API_KEY}&language=es-SP`;
+    return `https://api.themoviedb.org/3/movie/${id}/images?api_key=${API_KEY}&language=en-US`;
   } else if (mediaType === "tv") {
-    return `tv/${id}/images?api_key=${API_KEY}&language=es-SP`;
+    return `https://api.themoviedb.org/3/tv/${id}/images?api_key=${API_KEY}&language=es-SP`;
   }
 }

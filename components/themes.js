@@ -13,9 +13,17 @@ export const lightTheme = {
   color_pink_600: "#75213c",
   color_pink_700: "#4e1628",
 
-  color_primary_300: "#A5CBD6",
-  color_primary_400: "#599EB2",
-  color_primary_500: "#3A7481",
+  color_primary_200: "#FFBB99",
+  color_primary_300: "#ff9966",
+  color_primary_400: "#FF8547",
+  color_primary_500: "#FF691F",
+  color_primary_600: "#F55200",
+
+  color_secondary_200: "#FFADAF",
+  color_secondary_300: "#FF8587",
+  color_secondary_400: "#ff5e62",
+  color_secondary_500: "#FF474A",
+  color_secondary_600: "#E82E31",
 
   color_secondary_400: "#fafafa",
 
@@ -24,8 +32,7 @@ export const lightTheme = {
 
   // color_text_400: "#2f3139",
 
-  color_text_400: "#CAD7E3",
-  color_text_400: "#CAD7E3",
+  color_text_400: "#fefefe",
 
   color_background_300: "#212431",
   color_background_400: "#181a23",

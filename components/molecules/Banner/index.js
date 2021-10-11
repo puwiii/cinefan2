@@ -1,6 +1,7 @@
 import { Rating } from "../../atoms/Rating";
 import { Pharagraph } from "../../atoms/Pharagraph";
 import { Sign } from "../../atoms/Sign";
+import { Link } from "../../atoms/Link";
 import Genres from "../Genres";
 
 import { FiPlay } from "react-icons/fi";
@@ -20,9 +21,9 @@ const Banner = ({ mediaItem, mediaType, tag, iconTag, colorIcon, loader }) => {
   const urlBaseImage = "https://image.tmdb.org/t/p/original";
 
   return (
-    <StyledBanner loading={loader}>
+    <StyledBanner loader={loader}>
       {!loader && (
-        <>
+        <Link href={`/${mediaType}?id=${mediaItem.id}`}>
           {tag && (
             <Sign colorIcon={colorIcon}>
               {iconTag}
@@ -49,7 +50,7 @@ const Banner = ({ mediaItem, mediaType, tag, iconTag, colorIcon, loader }) => {
           <BannerImage
             background={`${urlBaseImage}${mediaItem.backdrop_path}`}
           ></BannerImage>
-        </>
+        </Link>
       )}
     </StyledBanner>
   );

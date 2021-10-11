@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 
-import Navbar from "../components/organisms/Navbar/Navbar";
 import Homepage from "../components/pages/Homepage/Homepage";
 import axios from "axios";
 import { requests } from "../requests";
@@ -22,7 +21,7 @@ export default function Home(props) {
         </Head>
 
         {/* home page */}
-        <Navbar />
+
         <Homepage popularMovies={popularMovies} popularSeries={popularSeries} />
       </div>
     </>

@@ -31,8 +31,8 @@ export const StyledBanner = styled.article`
     flex-direction: column;
   }
 
-  ${({ loading, theme }) =>
-    loading &&
+  ${({ loader, theme }) =>
+    loader &&
     css`
       min-height: 375px;
       animation: ${skeletonAnimation} 1s ease-in-out infinite both alternate;
