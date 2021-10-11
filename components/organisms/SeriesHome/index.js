@@ -71,25 +71,13 @@ const Index = ({ popularMovies = [] }) => {
     });
   };
 
-  const fetchUpcomingMovies = (page) => {
-    setMoviesLoading(true);
-    axios.get(requests.fetchMoviesNowPlayingPage).then((res) => {
-      console.log(res);
-      setMovies(res.data.results);
-      setMoviesLoading(false);
-      setSignContent("muy pronto");
-      setSignIcon(<FaRegCalendarAlt />);
-      setColorIcon("#3ff8ff");
-    });
-  };
-
   const fetchNowPlayingMovies = (page) => {
     setMoviesLoading(true);
     axios.get(requests.fetchSeriesAiringToday).then((res) => {
       console.log(res);
       setMovies(res.data.results);
       setMoviesLoading(false);
-      setSignContent("en estreno ahora");
+      setSignContent("al aire hoy");
       setSignIcon(<TiFilm />);
       setColorIcon("#f358ff");
     });
