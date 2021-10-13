@@ -1,6 +1,7 @@
 import { Rating } from "../../atoms/Rating";
 import { Pharagraph } from "../../atoms/Pharagraph";
 import { Sign } from "../../atoms/Sign";
+import { Title } from "../../atoms/Title";
 import { Link } from "../../atoms/Link";
 import Genres from "../Genres";
 
@@ -31,9 +32,7 @@ const Banner = ({ mediaItem, mediaType, tag, iconTag, colorIcon, loader }) => {
             </Sign>
           )}
           <BannerInfo>
-            <BannerTitle>
-              {mediaItem.title ? mediaItem.title : mediaItem.name}
-            </BannerTitle>
+            <Title>{mediaItem.title ? mediaItem.title : mediaItem.name}</Title>
             <Pharagraph crop={6}>{mediaItem.overview}</Pharagraph>
 
             <Genres mediaGenresId={mediaItem.genre_ids} mediaType={mediaType} />
