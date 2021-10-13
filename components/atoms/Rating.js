@@ -17,7 +17,8 @@ const Value = styled.span`
 
 const Votes = styled.span`
   align-self: flex-start;
-  opacity: 0.6;
+  opacity: 1;
+  font-family: "Lato", sans-serif;
 `;
 
 export const Rating = ({ value, votes }) => {
