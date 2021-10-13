@@ -124,7 +124,7 @@ export const fadeInAnimation = keyframes`
     }
 `;
 
-export const Container = styled.div`
+export const Container = styled.main`
   z-index: 1;
   width: 100%;
   max-width: 1400px;
