@@ -8,8 +8,9 @@ export const StyledPoster = styled.div`
   overflow: hidden;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   position: relative;
-
+  cursor: ${({ isLink }) => (isLink ? "pointer" : "default")};
   background: ${({ theme }) => theme.color_background_300};
+  transition: filter 0.1s linear;
 
   @media screen and (min-width: 768px) {
     ${({ wide }) => wide && `grid-column: span 2 / auto;`}
@@ -21,12 +22,13 @@ export const StyledPoster = styled.div`
     display:flex;
     `}
 
-  cursor:pointer;
-
-  transition: filter 0.1s linear;
+  ${({ isLink }) =>
+    isLink &&
+    `
   &:hover {
     filter: brightness(1.3) contrast(0.7);
   }
+  `}
 `;
 
 export const PosterImage = styled.figure`
@@ -65,6 +67,8 @@ export const PosterInfo = styled.div`
 
 export const PosterTitle = styled.h4`
   text-align: center;
+  letter-spacing: -0.8px;
+  font-weight: 500;
   font-size: 1.17rem;
 `;
 
