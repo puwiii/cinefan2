@@ -6,7 +6,7 @@ export const Header = styled.header`
   background: ${({ theme }) => theme.color_background_300};
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
 `;
 
 export const HeaderContainer = styled(Container)`
