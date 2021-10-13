@@ -1,19 +1,31 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { getDetails, getImages, getVideos, requests } from "../../requests";
+// import { useRouter } from "next/router";
+import Head from "next/head";
+import {
+  getDetails,
+  getImages,
+  getReviews,
+  getVideos,
+  requests,
+} from "../../requests";
 import axios from "axios";
-import { Link } from "../../components/atoms/Link";
+
+import Details from "../../components/pages/Details";
 
 export default function Index(props) {
-  const { movieDetails, movieVideos, movieImages } = props;
-  console.log(props);
-  //   const router = useRouter();
-  //   const { id } = router.query;
+  const { movieDetails, movieVideos, movieImages, movieReviews } = props;
+
   return (
-    <div>
-      <h1>pelicula con id {movieDetails?.id}</h1>
-      <Link href={`/movie?id=550988`}>IR A FREE GUY</Link>
-    </div>
+    <>
+      <Head>
+        <title>{movieDetails.title || movieDetails.name} | Cinefan 2</title>
+      </Head>
+      <Details
+        mediaDetails={movieDetails}
+        mediaVideos={movieVideos}
+        mediaReviews={movieReviews}
+        mediaType="movie"
+      />
+    </>
   );
 }
 
@@ -24,7 +36,10 @@ export async function getServerSideProps(context) {
   const movieDetails = movieDetailsRequest.data;
 
   const movieVideosRequest = await axios.get(getVideos(id, "movie"));
-  const movieVideos = movieVideosRequest.data;
+  const movieVideos = movieVideosRequest.data.results;
+
+  const movieReviewsRequest = await axios.get(getReviews(id, "movie"));
+  const movieReviews = movieReviewsRequest.data.results;
 
   const movieImagesRequest = await axios.get(getImages(id, "movie"));
   const movieImages = movieImagesRequest.data;
@@ -34,6 +49,7 @@ export async function getServerSideProps(context) {
       movieDetails: movieDetails,
       movieVideos: movieVideos,
       movieImages: movieImages,
+      movieReviews: movieReviews,
     },
   };
 }
