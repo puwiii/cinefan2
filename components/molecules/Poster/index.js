@@ -16,65 +16,129 @@ import {
   ImageBone,
 } from "./Poster.elements";
 
-const index = ({ mediaItem, mediaType = "movie", loader }) => {
-  const isWide = mediaItem?.vote_average > 8 ? true : false;
+const index = ({
+  mediaItem,
+  mediaType = "movie",
+  loader,
+  isLink = true,
+  noWide = false,
+}) => {
+  const isWide = noWide ? false : mediaItem?.vote_average > 8 ? true : false;
 
   return (
-    <StyledPoster wide={isWide}>
+    <StyledPoster wide={isWide} isLink={isLink}>
       {isWide ? (
-        <Link href={`/${mediaType}?id=${mediaItem.id}`}>
-          <PosterImage>
-            <Image
-              layout="responsive"
-              objectFit="cover"
-              width="500px"
-              height="750px"
-              quality={50}
-              src={`https://image.tmdb.org/t/p/w780${mediaItem.poster_path}`}
-              placeholder="blur"
-              blurDataURL={`https://image.tmdb.org/t/p/w300${mediaItem.poster_path}`}
-              alt={mediaItem.title ? mediaItem.title : mediaItem.name}
-            />
-          </PosterImage>
-          <PosterInfo>
-            <PosterTitle>
-              {mediaItem.title ? mediaItem.title : mediaItem.name}
-            </PosterTitle>
-            <Pharagraph textAling="left" crop={5}>
-              {mediaItem.overview}
-            </Pharagraph>
-            <Rating
-              value={mediaItem.vote_average}
-              votes={mediaItem.vote_count}
-            />
-            <Genres
-              variant="small"
-              mediaGenresId={mediaItem.genre_ids}
-              mediaType={mediaType}
-            />
-          </PosterInfo>
-          <Sign colorIcon="#22ff22">
-            <GoVerified />
-            muy buena critica
-          </Sign>
-        </Link>
+        <>
+          {isLink ? (
+            <Link href={`/${mediaType}?id=${mediaItem.id}`}>
+              <PosterImage>
+                <Image
+                  layout="responsive"
+                  objectFit="cover"
+                  width="500px"
+                  height="750px"
+                  quality={50}
+                  src={`https://image.tmdb.org/t/p/w780${mediaItem.poster_path}`}
+                  placeholder="blur"
+                  blurDataURL={`https://image.tmdb.org/t/p/w300${mediaItem.poster_path}`}
+                  alt={mediaItem.title ? mediaItem.title : mediaItem.name}
+                />
+              </PosterImage>
+              <PosterInfo>
+                <PosterTitle>
+                  {mediaItem.title ? mediaItem.title : mediaItem.name}
+                </PosterTitle>
+                <Pharagraph textAling="left" crop={5}>
+                  {mediaItem.overview}
+                </Pharagraph>
+                <Rating
+                  value={mediaItem.vote_average}
+                  votes={mediaItem.vote_count}
+                />
+                <Genres
+                  variant="small"
+                  mediaGenresId={mediaItem.genre_ids}
+                  mediaType={mediaType}
+                />
+              </PosterInfo>
+              <Sign colorIcon="#22ff22">
+                <GoVerified />
+                muy buena critica
+              </Sign>
+            </Link>
+          ) : (
+            <>
+              <PosterImage>
+                <Image
+                  layout="responsive"
+                  objectFit="cover"
+                  width="500px"
+                  height="750px"
+                  quality={50}
+                  src={`https://image.tmdb.org/t/p/w780${mediaItem.poster_path}`}
+                  placeholder="blur"
+                  blurDataURL={`https://image.tmdb.org/t/p/w300${mediaItem.poster_path}`}
+                  alt={mediaItem.title ? mediaItem.title : mediaItem.name}
+                />
+              </PosterImage>
+              <PosterInfo>
+                <PosterTitle>
+                  {mediaItem.title ? mediaItem.title : mediaItem.name}
+                </PosterTitle>
+                <Pharagraph textAling="left" crop={5}>
+                  {mediaItem.overview}
+                </Pharagraph>
+                <Rating
+                  value={mediaItem.vote_average}
+                  votes={mediaItem.vote_count}
+                />
+                <Genres
+                  variant="small"
+                  mediaGenresId={mediaItem.genre_ids}
+                  mediaType={mediaType}
+                />
+              </PosterInfo>
+              <Sign colorIcon="#22ff22">
+                <GoVerified />
+                muy buena critica
+              </Sign>
+            </>
+          )}
+        </>
       ) : (
         <>
           {loader ? (
             <ImageBone width="500" height="750" />
           ) : (
-            <Link href={`/${mediaType}?id=${mediaItem.id}`}>
-              <Image
-                layout="responsive"
-                width="500px"
-                height="750px"
-                quality={50}
-                src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
-                placeholder="blur"
-                blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
-                alt={mediaItem.title ? mediaItem.title : mediaItem.name}
-              />
-            </Link>
+            <>
+              {isLink ? (
+                <Link href={`/${mediaType}?id=${mediaItem.id}`}>
+                  <Image
+                    layout="responsive"
+                    width="500px"
+                    height="750px"
+                    quality={50}
+                    src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
+                    placeholder="blur"
+                    blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
+                    alt={mediaItem.title ? mediaItem.title : mediaItem.name}
+                  />
+                </Link>
+              ) : (
+                <>
+                  <Image
+                    layout="responsive"
+                    width="500px"
+                    height="750px"
+                    quality={50}
+                    src={`https://image.tmdb.org/t/p/w500${mediaItem.poster_path}`}
+                    placeholder="blur"
+                    blurDataURL={`https://image.tmdb.org/t/p/w92${mediaItem.poster_path}`}
+                    alt={mediaItem.title ? mediaItem.title : mediaItem.name}
+                  />
+                </>
+              )}
+            </>
           )}
         </>
       )}
