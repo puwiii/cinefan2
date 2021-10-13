@@ -32,6 +32,7 @@ export const darkTheme = {
 
   // color_text_400: "#2f3139",
 
+  color_text_200: "#cfcfcf",
   color_text_400: "#fefefe",
 
   color_background_300: "#212431",
