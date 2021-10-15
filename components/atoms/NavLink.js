@@ -41,9 +41,10 @@ const StyledLink = styled.a`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    border-bottom: 0;
-    border-top: 3px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
     font-size: 0.8rem;
+    padding: 0.87em 1.37em;
   }
 `;
 
