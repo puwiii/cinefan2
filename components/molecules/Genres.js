@@ -23,20 +23,26 @@ const GenresStyled = styled.div`
 
 const Genres = ({ mediaGenresId, mediaType, variant }) => {
   const [tags, setTags] = useState(null);
+  const [loadingTags, setLoadingTags] = useState(true);
 
   useEffect(() => {
     getGenres(mediaGenresId, mediaType).then((res) => {
       setTags(res);
+      setLoadingTags(false);
     });
   }, []);
 
   return (
     <GenresStyled variant={variant}>
-      {tags?.map((tag, index) => (
-        <Tag key={index} variant={variant}>
-          {tag}
-        </Tag>
-      ))}
+      {loadingTags ? (
+        <Tag variant={variant}>cargando...</Tag>
+      ) : (
+        tags?.map((tag, index) => (
+          <Tag key={index} variant={variant}>
+            {tag}
+          </Tag>
+        ))
+      )}
     </GenresStyled>
   );
 };
