@@ -26,7 +26,7 @@ export const StyledPoster = styled.div`
     isLink &&
     `
   &:hover {
-    filter: brightness(1.3) contrast(0.7);
+    filter: brightness(1.1) contrast(0.8);
   }
   `}
 `;
