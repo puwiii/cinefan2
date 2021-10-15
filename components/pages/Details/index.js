@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import { FiVideoOff } from "react-icons/fi";
-
+import { RiChatOffLine } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
+import { FcFilmReel } from "react-icons/fc";
 
 import { Title } from "../../atoms/Title";
 import { Subtitle } from "../../atoms/Subtitle";
@@ -29,6 +30,7 @@ import {
   Companies,
   Company,
   CompanyName,
+  CompanyLogoPlaceholder,
   CompanyImage,
   StatusTag,
   DetailsReviews,
@@ -41,8 +43,6 @@ import { Pharagraph } from "../../atoms/Pharagraph";
 import { Rating } from "../../atoms/Rating";
 import { Tag } from "../../atoms/Tag";
 const Index = ({ mediaDetails, mediaVideos, mediaReviews, mediaType }) => {
-  console.log(mediaReviews);
-
   const [video, setVideo] = useState(null);
 
   const [isDecorative, setIsDecorative] = useState(true);
@@ -91,7 +91,7 @@ const Index = ({ mediaDetails, mediaVideos, mediaReviews, mediaType }) => {
       <DetailsContainer>
         <DetailsMain>
           <DetailsHeader>
-            <Title>{mediaDetails.title}</Title>
+            <Title>{mediaDetails.title || mediaDetails.name}</Title>
             <Subtitle>{mediaDetails.tagline}</Subtitle>
           </DetailsHeader>
           <DetailsInfo>
@@ -120,6 +120,14 @@ const Index = ({ mediaDetails, mediaVideos, mediaReviews, mediaType }) => {
           </DetailsInfo>
           <DetailsReviews>
             <Subtitle>Comentarios</Subtitle>
+            {mediaReviews.length === 0 && (
+              <Pharagraph
+                style={{ display: "flex", alignItems: "center", gap: ".87em" }}
+              >
+                <RiChatOffLine />
+                Sin comentarios aún
+              </Pharagraph>
+            )}
             {mediaReviews.map((review, index) => (
               <Review key={index}>
                 <ReviewUser>
@@ -156,17 +164,26 @@ const Index = ({ mediaDetails, mediaVideos, mediaReviews, mediaType }) => {
             {mediaDetails.production_companies.map((company, index) => (
               <Company key={index} title={company.name}>
                 <CompanyImage>
-                  <Image
-                    width="200%"
-                    height="100%"
-                    layout="fixed"
-                    objectFit="contain"
-                    quality={10}
-                    src={`https://image.tmdb.org/t/p/original/${company.logo_path}`}
-                    // placeholder="blur"
-                    // blurDataURL={`https://image.tmdb.org/t/p/original/${company.logo_path}`}
-                    alt={company.name}
-                  />
+                  {!company.logo_path ? (
+                    <>
+                      <CompanyLogoPlaceholder>
+                        <FcFilmReel /> Film Company
+                      </CompanyLogoPlaceholder>
+                      <Pharagraph>{company.name}</Pharagraph>
+                    </>
+                  ) : (
+                    <Image
+                      width="200%"
+                      height="100%"
+                      layout="fixed"
+                      objectFit="contain"
+                      quality={10}
+                      src={`https://image.tmdb.org/t/p/original/${company.logo_path}`}
+                      // placeholder="blur"
+                      // blurDataURL={`https://image.tmdb.org/t/p/original/${company.logo_path}`}
+                      alt={company.name}
+                    />
+                  )}
                 </CompanyImage>
                 {/* <CompanyName>{company.name}</CompanyName> */}
               </Company>
