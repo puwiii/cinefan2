@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Subtitle = styled.h3`
-  font-size: 1.47rem;
+  font-size: 1.27rem;
   letter-spacing: -0.2px;
   color: ${({ theme }) => theme.color_text_200};
   font-weight: 600;
