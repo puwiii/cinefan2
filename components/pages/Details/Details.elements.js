@@ -78,7 +78,11 @@ export const DetailsContainer = styled(Container)`
   margin-top: -50px;
   position: relative;
   z-index: 2000;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const DetailsHeader = styled.header`
@@ -121,6 +125,10 @@ export const DetailsPoster = styled.figure`
 export const DetailsInfo = styled.section`
   display: flex;
   gap: 2em;
+
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+  }
 `;
 
 export const DetailsOverview = styled.article`
@@ -132,6 +140,7 @@ export const DetailsOverview = styled.article`
 
 export const DetailsOverviewGenres = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
 `;
 
@@ -150,21 +159,29 @@ export const DetailsAsideVideos = styled.div`
 `;
 
 export const Companies = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1em;
   align-items: stretch;
   align-self: flex-end;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export const Company = styled.div`
+  width: 100%;
   border-radius: 4px;
   background: ${({ theme }) => theme.color_background_300};
   display: flex;
   flex-direction: column;
   gap: 1em;
   align-items: center;
-  padding: 1em;
+  padding: 0.37em 0.67rem;
 `;
 
 export const CompanyLogoPlaceholder = styled.span`
@@ -194,8 +211,16 @@ export const StatusTag = styled.span`
   border-radius: 100px;
   font-weight: 400;
   padding: 0.47em 0.87em;
-  position: absolute;
   background: ${({ theme }) => theme.color_success};
+  position: absolute;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.67rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    position: unset;
+  }
 `;
 
 export const DetailsReviews = styled.section`
@@ -209,6 +234,11 @@ export const Review = styled.article`
   gap: 2em;
   border-bottom: 1px solid ${({ theme }) => theme.color_background_300};
   padding: 1em 0;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const ReviewUser = styled.div`
@@ -224,6 +254,11 @@ export const UserImage = styled.figure`
   overflow: hidden;
   width: 75px;
   height: 75px;
+
+  @media screen and (max-width: 425px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const UserName = styled.span`
