@@ -5,7 +5,7 @@ import { skeletonAnimation } from "../../../globalStyles";
 export const StyledBanner = styled.article`
   border-radius: 0.41em;
   overflow: hidden;
-  border: 1px solid #323232;
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   width: 100%;
@@ -24,7 +24,7 @@ export const StyledBanner = styled.article`
 
   transition: filter 0.1s linear;
   &:hover {
-    filter: brightness(1.1) contrast(0.9);
+    filter: brightness(1) contrast(0.9);
   }
 
   @media screen and (max-width: 425px) {
