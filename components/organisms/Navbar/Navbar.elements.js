@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Container } from "../../../globalStyles";
 
 export const Header = styled.header`
-  padding: 10px 0;
   background: ${({ theme }) => theme.color_background_300};
   position: sticky;
   top: 0;
@@ -11,7 +10,7 @@ export const Header = styled.header`
 
 export const HeaderContainer = styled(Container)`
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 12px;
   justify-content: flex-end;
 `;
