@@ -9,9 +9,9 @@ const AnchorLink = styled.a`
   all: inherit;
 `;
 
-export const Link = ({ href, passHref = true, children }) => {
+export const Link = ({ href, passHref = true, children, shallow = false }) => {
   return (
-    <StyledLink href={href} passHref={passHref}>
+    <StyledLink href={href} passHref={passHref} shallow={shallow}>
       <AnchorLink>{children}</AnchorLink>
     </StyledLink>
   );
