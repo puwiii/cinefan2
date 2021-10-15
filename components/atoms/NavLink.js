@@ -2,20 +2,21 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const StyledLink = styled.a`
-  color: ${({ theme }) => theme.color_text_400};
-  font-weight: 600;
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.color_primary_300 : theme.color_text_400};
+  font-weight: 500;
   border: 0;
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
 
   font-size: 0.9rem;
 
-  padding: 1em 1.37em;
+  padding: 1.37em;
 
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
   user-select: none;
 
   transition: color 105ms linear, border-color 105ms linear;
@@ -28,11 +29,15 @@ const StyledLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.color_primary_300};
     border-bottom: 2px solid ${({ theme }) => theme.color_primary_300};
-
-    & > svg {
-      transform: rotate(-30deg) translate(-3px, -6px);
-    }
   }
+
+  ${({ isActive, theme }) =>
+    isActive &&
+    `
+    color: ${theme.color_primary_300};
+    border-bottom: 2px solid ${theme.color_primary_300};
+    background: rgba(255, 255, 255, 0.1);
+  `}
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -42,10 +47,16 @@ const StyledLink = styled.a`
   }
 `;
 
-export const NavLink = ({ href, label, passHref = true, icon = "" }) => {
+export const NavLink = ({
+  href,
+  label,
+  passHref = true,
+  icon = "",
+  isActive = false,
+}) => {
   return (
     <Link href={href} passHref={passHref}>
-      <StyledLink>
+      <StyledLink isActive={isActive}>
         {icon}
         {label}
       </StyledLink>
