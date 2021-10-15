@@ -35,8 +35,10 @@ export const NavButton = styled.button`
   padding: 0.87em;
   cursor: pointer;
   font-size: 0.87rem;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
 
-  border-radius: 100px;
+  transition: color 100ms linear, border 100ms linear, background 100ms linear;
 
   @media screen and (max-width: 768px) {
     font-size: 0.75rem;
@@ -45,6 +47,9 @@ export const NavButton = styled.button`
   &:hover {
     color: ${({ color }) => color};
     background: ${({ theme }) => theme.color_background_300};
+
+    /* color: ${({ theme }) => theme.color_primary_300}; */
+    border-bottom: 2px solid ${({ color }) => color};
   }
 
   & > svg {

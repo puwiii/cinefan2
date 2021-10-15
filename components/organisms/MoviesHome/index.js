@@ -54,7 +54,7 @@ const Index = ({ popularMovies = [] }) => {
       setMoviesLoading(false);
       setSignContent("la mas reciente");
       setSignIcon(<BiTime />);
-      setColorIcon("#3f5fff");
+      setColorIcon("#70a6f7");
     });
   };
 
@@ -90,7 +90,7 @@ const Index = ({ popularMovies = [] }) => {
       setMoviesLoading(false);
       setSignContent("en estreno ahora");
       setSignIcon(<TiFilm />);
-      setColorIcon("#f358ff");
+      setColorIcon("#f378ff");
     });
   };
 
@@ -100,23 +100,23 @@ const Index = ({ popularMovies = [] }) => {
         <MoviesMenu>
           <Title>Peliculas</Title>
           <Navbar>
-            <NavButton onClick={fetchPopularMovies}>
+            <NavButton onClick={fetchPopularMovies} color="#ff4f4f">
               <FaFire />
               Mas populares
             </NavButton>
-            <NavButton onClick={fetchNowPlayingMovies}>
+            <NavButton onClick={fetchNowPlayingMovies} color="#f378ff">
               <HiOutlineTicket />
               En cines ahora
             </NavButton>
-            <NavButton onClick={fetchUpcomingMovies}>
+            <NavButton onClick={fetchUpcomingMovies} color="#3ff8ff">
               <FaRegCalendarAlt />
               Proximos estrenos
             </NavButton>
-            <NavButton onClick={fetchTopRatedMovies}>
+            <NavButton onClick={fetchTopRatedMovies} color="#33ff33">
               <BiStar />
               Mas puntuadas
             </NavButton>
-            <NavButton onClick={fetchLatestMovies}>
+            <NavButton onClick={fetchLatestMovies} color="#70a6f7">
               <BiTime />
               Ultimas estrenadas
             </NavButton>

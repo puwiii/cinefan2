@@ -20,7 +20,7 @@ import {
   MoviesViewer,
   Navbar,
   NavButton,
-} from "./MoviesHome.elements";
+} from "../MoviesHome/MoviesHome.elements";
 import { requests } from "../../../requests";
 
 const Index = ({ popularMovies = [] }) => {
@@ -55,7 +55,7 @@ const Index = ({ popularMovies = [] }) => {
       setMoviesLoading(false);
       setSignContent("la mas reciente");
       setSignIcon(<BiTime />);
-      setColorIcon("#3f5fff");
+      setColorIcon("#70a6f7");
     });
   };
 
@@ -79,7 +79,7 @@ const Index = ({ popularMovies = [] }) => {
       setMoviesLoading(false);
       setSignContent("al aire hoy");
       setSignIcon(<TiFilm />);
-      setColorIcon("#f358ff");
+      setColorIcon("#f378ff");
     });
   };
 
@@ -89,19 +89,19 @@ const Index = ({ popularMovies = [] }) => {
         <MoviesMenu>
           <Title>Series</Title>
           <Navbar>
-            <NavButton onClick={fetchPopularMovies}>
+            <NavButton onClick={fetchPopularMovies} color="#ff4f4f">
               <FaFire />
               Mas populares
             </NavButton>
-            <NavButton onClick={fetchNowPlayingMovies}>
+            <NavButton onClick={fetchNowPlayingMovies} color="#f378ff">
               <HiOutlineTicket />
               Al aire ahora
             </NavButton>
-            <NavButton onClick={fetchTopRatedMovies}>
+            <NavButton onClick={fetchTopRatedMovies} color="#33ff33">
               <BiStar />
               Mas puntuadas
             </NavButton>
-            <NavButton onClick={fetchLatestMovies}>
+            <NavButton onClick={fetchLatestMovies} color="#70a6f7">
               <BiTime />
               Ultimas estrenadas
             </NavButton>
