@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Head from "next/head";
 import Lottie from "lottie-web";
 import SyncLoader from "react-spinners/SyncLoader";
 
@@ -34,6 +35,9 @@ const Index = () => {
 
   return (
     <LoadingPage>
+      <Head>
+        <title>Cinefan 2 | Movies | Series | Trailers | More + ...</title>
+      </Head>
       <LoadingComponent>
         <AnimationBox ref={animationBox} />
         <SyncLoader
