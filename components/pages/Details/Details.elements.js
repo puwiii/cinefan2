@@ -154,6 +154,7 @@ export const Companies = styled.div`
   flex-direction: column;
   gap: 1em;
   align-items: stretch;
+  align-self: flex-end;
 `;
 
 export const Company = styled.div`
@@ -164,6 +165,16 @@ export const Company = styled.div`
   gap: 1em;
   align-items: center;
   padding: 1em;
+`;
+
+export const CompanyLogoPlaceholder = styled.span`
+  padding: 1.5em 0;
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.67em;
+  white-space: nowrap;
 `;
 
 export const CompanyImage = styled.div`
