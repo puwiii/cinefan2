@@ -11,7 +11,7 @@ import {
 
 import { NavbarMenu } from "../../molecules/NavbarMenu";
 
-import { FiLogIn } from "react-icons/fi";
+import { IoEnter } from "react-icons/io5";
 
 import { links } from "./data";
 import { Logo } from "../../atoms/Logo";
@@ -30,7 +30,7 @@ const Navbar = () => {
         <NavbarMenu links={links} />
 
         <PrimaryButton onClick={(e) => alert("Presionado papu")}>
-          <FiLogIn /> Login
+          <IoEnter /> Login
         </PrimaryButton>
       </HeaderContainer>
     </Header>

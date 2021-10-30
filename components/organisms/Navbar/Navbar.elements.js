@@ -6,6 +6,10 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 10000;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 0;
+  }
 `;
 
 export const HeaderContainer = styled(Container)`

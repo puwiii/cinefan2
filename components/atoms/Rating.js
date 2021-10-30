@@ -29,7 +29,7 @@ export const Rating = ({ value, votes }) => {
         <FiAward />
         {value} / 10
       </Value>
-      ·{votes && <Votes>{votes} votos</Votes>}
+      ·<Votes>{votes} votos</Votes>
     </StyledRating>
   );
 };

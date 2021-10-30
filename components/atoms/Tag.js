@@ -6,7 +6,7 @@ export const Tag = styled.span`
   padding: 0.54em 0.87em;
   padding-left: 2em;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   overflow: hidden;
 
   font-weight: ${({ variant }) => {
@@ -35,6 +35,6 @@ export const Tag = styled.span`
     width: 10px;
     height: 100%;
     z-index: 10;
-    border-left: 3px dotted ${({ theme }) => theme.color_background_300};
+    border-left: 3px dotted ${({ theme }) => theme.color_background_400};
   }
 `;

@@ -24,7 +24,13 @@ const Banner = ({ mediaItem, mediaType, tag, iconTag, colorIcon, loader }) => {
   return (
     <StyledBanner loader={loader}>
       {!loader && (
-        <Link href={`/${mediaType}?id=${mediaItem.id}`}>
+        <Link
+          href={
+            mediaType === "movie"
+              ? `/movies/${mediaItem.id}`
+              : `/series/${mediaItem.id}`
+          }
+        >
           {tag && (
             <Sign colorIcon={colorIcon}>
               {iconTag}

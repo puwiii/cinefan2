@@ -73,16 +73,33 @@ export const BackgroundPlayerMessage = styled.span`
 
 export const DetailsContainer = styled(Container)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 80px;
-  margin-top: -50px;
   position: relative;
   z-index: 2000;
+  margin-top: -50px;
   padding-bottom: 100px;
+`;
+
+export const DetailsStyled = styled.div`
+  display: flex;
+  /* flex-direction: row; */
+  gap: 80px;
+  position: relative;
+  z-index: 2000;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
+`;
+
+export const DetailsMain = styled.main`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 4em;
+  position: relative;
+  z-index: 1000;
 `;
 
 export const DetailsHeader = styled.header`
@@ -108,14 +125,6 @@ export const BackgroundPlayerButton = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 1500;
-`;
-
-export const DetailsMain = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 4em;
-  position: relative;
-  z-index: 1000;
 `;
 
 export const DetailsPoster = styled.figure`
@@ -145,7 +154,6 @@ export const DetailsOverviewGenres = styled.div`
 `;
 
 export const DetailsAside = styled.aside`
-  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -158,7 +166,7 @@ export const DetailsAsideVideos = styled.div`
   gap: 1em;
 `;
 
-export const Companies = styled.div`
+export const Companies = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -186,12 +194,17 @@ export const Company = styled.div`
 
 export const CompanyLogoPlaceholder = styled.span`
   padding: 1.5em 0;
-  font-size: 1.2rem;
-  font-weight: 200;
+  font-size: 0.67rem;
+  font-weight: 500;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.67em;
   white-space: nowrap;
+
+  & > svg {
+    font-size: 2rem;
+  }
 `;
 
 export const CompanyImage = styled.div`
@@ -232,19 +245,22 @@ export const DetailsReviews = styled.section`
 export const Review = styled.article`
   display: flex;
   gap: 2em;
-  border-bottom: 1px solid ${({ theme }) => theme.color_background_300};
   padding: 1em 0;
+  background: ${({ theme }) => theme.color_background_300};
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  align-items: flex-start;
 
   @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    align-items: flex-start;
   }
 `;
 
 export const ReviewUser = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1em;
+  /* flex-direction: column; */
+  gap: 1.2em;
   align-items: center;
 `;
 
@@ -262,5 +278,10 @@ export const UserImage = styled.figure`
 `;
 
 export const UserName = styled.span`
-  font-size: 0.6rem;
+  font-size: 1.1rem;
+  font-family: "Lato", sans-serif;
+`;
+
+export const ReadMore = styled.span`
+  font-weight: 200;
 `;

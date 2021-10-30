@@ -33,8 +33,9 @@ export const StyledPoster = styled.div`
 
 export const PosterImage = styled.figure`
   position: relative;
-  width: 46.7%;
+  width: 100%;
   height: 100%;
+  flex: 1;
   opacity: 9;
 
   &::before {

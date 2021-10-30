@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { requests } from "../requests";
 
-export const usePopularMovies = (page) => {
-  const [movies, setMovies] = useState(null);
+export const fetchPopularMovies = async (page) => {
+  // const [movies, setMovies] = useState(null);
 
-  useEffect(() => {
-    axios.get(`${requests.fetchMostPopularMovies}${page}`).then((res) => {
-      setMovies(res.data.results);
-    });
-  }, [page]);
+  // useEffect(() => {
+  const movies = await axios.get(`${requests.fetchMoviesPopularPage}${page}`);
 
-  return movies;
+  return movies.data.results;
 };
 
 const fetchLatestMovies = (page) => {

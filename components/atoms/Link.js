@@ -7,6 +7,8 @@ const StyledLink = styled(NextLink)`
 
 const AnchorLink = styled.a`
   all: inherit;
+  padding: 0;
+  border: none;
 `;
 
 export const Link = ({ href, passHref = true, children, shallow = false }) => {

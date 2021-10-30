@@ -8,13 +8,14 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
+  width: 100%;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
   @media screen and (max-width: 425px) {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
   }
 `;

@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html{
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 body{
@@ -124,7 +124,7 @@ export const fadeInAnimation = keyframes`
     }
 `;
 
-export const Container = styled.main`
+export const Container = styled.div`
   z-index: 1;
   width: 100%;
   max-width: 1400px;

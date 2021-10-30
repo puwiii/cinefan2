@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const StyledLink = styled.a`
   color: ${({ isActive, theme }) =>
@@ -9,7 +10,7 @@ const StyledLink = styled.a`
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
 
-  font-size: 0.9rem;
+  font-size: 0.87rem;
 
   padding: 1.37em;
 
@@ -45,6 +46,7 @@ const StyledLink = styled.a`
     border-top: 2px solid transparent;
     font-size: 0.8rem;
     padding: 0.87em 1.37em;
+    gap: 5px;
   }
 `;
 
@@ -53,10 +55,14 @@ export const NavLink = ({
   label,
   passHref = true,
   icon = "",
-  isActive = false,
+  // isActive = false,
+  shallow = false,
 }) => {
+  const { pathname } = useRouter();
+  const isActive = pathname === href;
+
   return (
-    <Link href={href} passHref={passHref}>
+    <Link href={href} passHref={passHref} shallow={shallow}>
       <StyledLink isActive={isActive}>
         {icon}
         {label}

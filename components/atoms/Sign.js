@@ -17,7 +17,7 @@ export const Sign = styled.span`
   font-weight: 600;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 768px) {
     font-size: 0.7rem;
     padding: 7px 10px;
   }
